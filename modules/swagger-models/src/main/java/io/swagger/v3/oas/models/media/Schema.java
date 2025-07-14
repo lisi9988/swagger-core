@@ -108,7 +108,7 @@ public class Schema<T> {
     private ExternalDocumentation externalDocs = null;
     private Boolean deprecated = null;
     private XML xml = null;
-    private java.util.Map<String, Object> extensions = null;
+    private Map<String, Object> extensions = null;
     protected List<T> _enum = null;
     private Discriminator discriminator = null;
 
@@ -128,6 +128,8 @@ public class Schema<T> {
     protected T _const;
 
     private SpecVersion specVersion = SpecVersion.V30;
+
+    private List<String> groups = null;
 
     @JsonIgnore
     public SpecVersion getSpecVersion() {
@@ -2081,8 +2083,21 @@ public class Schema<T> {
         this.examples.add(example);
     }
 
+    public List<String> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<String> groups) {
+        this.groups = groups;
+    }
+
+    public Schema groups(List<String> groups) {
+        this.groups = groups;
+        return this;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
+    public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -2155,8 +2170,8 @@ public class Schema<T> {
                 Objects.equals(this.$comment, schema.$comment) &&
                 Objects.equals(this.examples, schema.examples) &&
                 Objects.equals(this.prefixItems, schema.prefixItems) &&
-                Objects.equals(this.items, schema.items)
-
+                Objects.equals(this.items, schema.items) &&
+                Objects.equals(this.groups, schema.groups)
                 ;
     }
 
@@ -2169,7 +2184,7 @@ public class Schema<T> {
                 discriminator, _enum, _default, patternProperties, $id, $anchor, $schema, $vocabulary, $dynamicAnchor,
                 $dynamicRef, types, allOf, anyOf, oneOf, _const, contentEncoding, contentMediaType, contentSchema,
                 propertyNames, unevaluatedProperties, maxContains, minContains, additionalItems, unevaluatedItems,
-                _if, _else, then, dependentRequired, dependentSchemas, $comment, examples, prefixItems, items);
+                _if, _else, then, dependentRequired, dependentSchemas, $comment, examples, prefixItems, items, groups);
     }
 
     public java.util.Map<String, Object> getExtensions() {
@@ -2232,6 +2247,7 @@ public class Schema<T> {
         sb.append("    deprecated: ").append(toIndentedString(deprecated)).append("\n");
         sb.append("    discriminator: ").append(toIndentedString(discriminator)).append("\n");
         sb.append("    xml: ").append(toIndentedString(xml)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         if (specVersion == SpecVersion.V31) {
             sb.append("    patternProperties: ").append(toIndentedString(patternProperties)).append("\n");
             sb.append("    contains: ").append(toIndentedString(contains)).append("\n");
@@ -2258,6 +2274,7 @@ public class Schema<T> {
             sb.append("    dependentSchemas: ").append(toIndentedString(dependentSchemas)).append("\n");
             sb.append("    $comment: ").append(toIndentedString($comment)).append("\n");
             sb.append("    prefixItems: ").append(toIndentedString(prefixItems)).append("\n");
+            sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         }
         sb.append("}");
         return sb.toString();
@@ -2267,7 +2284,7 @@ public class Schema<T> {
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
      */
-    protected String toIndentedString(java.lang.Object o) {
+    protected String toIndentedString(Object o) {
         if (o == null) {
             return "null";
         }

@@ -6,6 +6,7 @@ import io.swagger.v3.oas.models.media.Content;
 import io.swagger.v3.oas.models.media.Schema;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -57,6 +58,7 @@ public class Parameter {
     private Object example = null;
     private Content content = null;
     private java.util.Map<String, Object> extensions = null;
+    private List<String> groups = null;
 
     /**
      * returns the name property from a Parameter instance.
@@ -335,6 +337,19 @@ public class Parameter {
         return this;
     }
 
+    public List<String> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<String> groups) {
+        this.groups = groups;
+    }
+
+    public Parameter groups(List<String> groups) {
+        this.groups = groups;
+        return this;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -358,12 +373,14 @@ public class Parameter {
                 Objects.equals(this.example, parameter.example) &&
                 Objects.equals(this.content, parameter.content) &&
                 Objects.equals(this.$ref, parameter.$ref) &&
-                Objects.equals(this.extensions, parameter.extensions);
+                Objects.equals(this.extensions, parameter.extensions) &&
+                Objects.equals(this.groups, parameter.groups)
+                ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, in, description, required, deprecated, allowEmptyValue, style, explode, allowReserved, schema, examples, example, content, $ref, extensions);
+        return Objects.hash(name, in, description, required, deprecated, allowEmptyValue, style, explode, allowReserved, schema, examples, example, content, $ref, extensions, groups);
     }
 
     public java.util.Map<String, Object> getExtensions() {
@@ -416,6 +433,7 @@ public class Parameter {
         sb.append("    example: ").append(toIndentedString(example)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    $ref: ").append(toIndentedString($ref)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("}");
         return sb.toString();
     }
