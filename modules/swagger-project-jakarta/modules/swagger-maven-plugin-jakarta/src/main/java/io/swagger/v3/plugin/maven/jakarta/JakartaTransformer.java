@@ -50,10 +50,10 @@ public class JakartaTransformer {
             Stream.of(
                     // "META-INF/MANIFEST.MF",
                     "META-INF/maven/plugin.xml",
-                    "META-INF/maven/io.swagger.core.v3/swagger-maven-plugin/plugin-help.xml",
+                    "META-INF/maven/io.github.lisi9988/swagger-maven-plugin/plugin-help.xml",
                     // "META-INF/plexus/components.xml",
-                    "META-INF/maven/io.swagger.core.v3/swagger-maven-plugin/pom.xml",
-                    "META-INF/maven/io.swagger.core.v3/swagger-maven-plugin/pom.properties")
+                    "META-INF/maven/io.github.lisi9988/swagger-maven-plugin/pom.xml",
+                    "META-INF/maven/io.github.lisi9988/swagger-maven-plugin/pom.properties")
                     .collect(Collectors.toCollection(HashSet::new));
 
     private static final String jakartaXmlBindDep = "<dependency>\n" +
@@ -285,12 +285,12 @@ public class JakartaTransformer {
         Files.move(Paths.get(outPath + File.separator +
                         "META-INF" + File.separator +
                         "maven" + File.separator +
-                        "io.swagger.core.v3" + File.separator +
+                        "io.github.lisi9988" + File.separator +
                         "swagger-maven-plugin"),
                 Paths.get(outPath + File.separator +
                         "META-INF" + File.separator +
                         "maven" + File.separator +
-                        "io.swagger.core.v3" + File.separator +
+                        "io.github.lisi9988" + File.separator +
                         "swagger-maven-plugin-jakarta")
         );
 

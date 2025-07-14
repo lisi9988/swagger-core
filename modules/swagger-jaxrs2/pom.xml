@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>swagger-project</artifactId>
-        <groupId>io.swagger.core.v3</groupId>
-        <version>2.2.35-SNAPSHOT</version>
+        <groupId>io.github.lisi9988</groupId>
+        <version>2.2.35-SNAPSHOT-group</version>
         <relativePath>../../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -163,7 +163,7 @@
             <artifactId>commons-io</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.swagger.core.v3</groupId>
+            <groupId>io.github.lisi9988</groupId>
             <artifactId>swagger-models</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -173,12 +173,12 @@
             <version>${snakeyaml-version}</version>
         </dependency>
         <dependency>
-            <groupId>io.swagger.core.v3</groupId>
+            <groupId>io.github.lisi9988</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.swagger.core.v3</groupId>
+            <groupId>io.github.lisi9988</groupId>
             <artifactId>swagger-integration</artifactId>
             <version>${project.version}</version>
         </dependency>
