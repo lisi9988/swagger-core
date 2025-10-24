@@ -24,6 +24,7 @@ public class ComposedSchema extends Schema<Object> {
                 .deprecated(source.getDeprecated())
                 .additionalProperties(source.getAdditionalProperties())
                 .description(source.getDescription())
+                .groups(source.getGroups())
                 .discriminator(source.getDiscriminator())
                 .exclusiveMaximum(source.getExclusiveMaximum())
                 .exclusiveMinimum(source.getExclusiveMinimum())
